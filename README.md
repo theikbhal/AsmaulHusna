@@ -29,7 +29,7 @@ badges, memorisation ladder and garden** honest.
 - **Share tab (Instagram)** — export **Post 4:5 (1080×1350)**, **Story/Reel 9:16 (1080×1920)**,
   **Square 1:1** and **multi-card carousels** as PNGs; render a **reel MP4** (optionally with an
   audio file you choose); or **record the window live** with ScreenCaptureKit.
-  Everything lands in `~/Desktop/AsmaulHusna`.
+  Everything lands in `~/Desktop/AsmaulHusna-Exports`.
 - **Gamified** — XP, levels, coins, **23 badges**, confetti when the day passes.
 - **Settings** — 100 background themes, night mode, reminder time, **enable/disable almost every
   feature**, launch at login, and a hidden **Developer settings** pane (day offset, data dump,

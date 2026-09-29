@@ -177,7 +177,7 @@ struct SettingsPane: View {
             Text("Video: “Export reel” renders an MP4 (optionally with your audio file). "
                  + "“Record window” uses Screen Recording — macOS will prompt for permission.")
                 .font(.caption)
-            Text("Files: ~/Desktop/AsmaulHusna").font(.caption2).foregroundStyle(.secondary)
+            Text("Files: ~/Desktop/AsmaulHusna-Exports").font(.caption2).foregroundStyle(.secondary)
         }
     }
 
@@ -251,7 +251,6 @@ struct SettingsPane: View {
     }
 
     private func dump() {
-        let d = UserDefaults.standard
         var out: [String: Any] = [:]
         out["reads"] = read.counts
         out["doneDays"] = Array(read.doneDays)

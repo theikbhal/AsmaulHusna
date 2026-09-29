@@ -104,7 +104,7 @@ struct ShareView: View {
                     run {
                         if format == 3 {
                             let urls = ShareExport.carousel(list, settings)
-                            return "Carousel saved: \(urls.count) PNGs in Desktop/AsmaulHusna"
+                            return "Carousel saved: \(urls.count) PNGs in Desktop/AsmaulHusna-Exports"
                         }
                         let url: URL?
                         if format == 1 {
@@ -120,7 +120,7 @@ struct ShareView: View {
                         }
                         guard let url else { return "Export failed." }
                         state.grantBadge("share1")
-                        return "Saved \(url.lastPathComponent) → Desktop/AsmaulHusna"
+                        return "Saved \(url.lastPathComponent) → Desktop/AsmaulHusna-Exports"
                     }
                 } label: {
                     Label(format == 3 ? "Export carousel" : "Export PNG", systemImage: "square.and.arrow.down")
@@ -134,7 +134,7 @@ struct ShareView: View {
                         let url = try await ShareExport.reel(list, audio: settings.audioInReel ? audioURL : nil,
                                                              secondsPerCard: seconds, settings)
                         state.grantBadge("reel1")
-                        return "Reel saved: \(url.lastPathComponent) → Desktop/AsmaulHusna"
+                        return "Reel saved: \(url.lastPathComponent) → Desktop/AsmaulHusna-Exports"
                     }
                 } label: {
                     Label("Export reel (MP4)", systemImage: "video")

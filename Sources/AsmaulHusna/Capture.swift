@@ -18,7 +18,7 @@ enum Capture {
 
     static func shareFolder() -> URL {
         let url = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask)[0]
-            .appendingPathComponent("AsmaulHusna", isDirectory: true)
+            .appendingPathComponent("AsmaulHusna-Exports", isDirectory: true)
         try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
         return url
     }
@@ -151,7 +151,7 @@ enum VideoEncoder {
             let asset = AVURLAsset(url: audio)
             do {
                 let reader = try AVAssetReader(asset: asset)
-                if let track = asset.tracks(withMediaType: .audio).first {
+                if let track = try? await asset.loadTracks(withMediaType: .audio).first {
                     let outSettings: [String: Any] = [
                         AVFormatIDKey: kAudioFormatMPEG4AAC,
                         AVSampleRateKey: 44100,
@@ -283,7 +283,7 @@ final class Recorder: ObservableObject {
             try? await stream?.stopCapture()
             stream = nil
             recording = false
-            status = "Saved to Desktop/AsmaulHusna"
+            status = "Saved to Desktop/AsmaulHusna-Exports"
         }
     }
 }

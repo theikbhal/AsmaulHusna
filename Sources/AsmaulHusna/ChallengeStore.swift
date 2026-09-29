@@ -199,7 +199,6 @@ final class ChallengeStore: ObservableObject {
 
     private func currentValue(_ kind: ChallengeKind) -> Int {
         let store = ReadStore.shared
-        let c = cal
         switch kind {
         case .daily, .weekly, .monthly, .yearly, .sunday:
             let p = period(for: kind)

@@ -61,7 +61,7 @@ five-box rhythm, hear & repeat, link the chain).
 - **Export reel** → MP4 at 1080×1920, optionally with an audio file you choose
 - **Record window** → live MP4 of the app window (Screen Recording permission)
 
-All files land in `~/Desktop/AsmaulHusna`.
+All files land in `~/Desktop/AsmaulHusna-Exports`.
 
 ## Is my data safe?
 

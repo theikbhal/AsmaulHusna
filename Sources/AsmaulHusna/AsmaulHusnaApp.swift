@@ -1,7 +1,31 @@
 import SwiftUI
 
+enum StepLog {
+    static func write(_ m: String) {
+        let line = "[\(Date().description(with: .none))] \(m)\n"
+        let url = URL(fileURLWithPath: "/tmp/ah_export.log")
+        if let data = line.data(using: .utf8) {
+            if FileManager.default.fileExists(atPath: url.path) {
+                if let h = try? FileHandle(forWritingTo: url) {
+                    _ = try? h.seekToEnd()
+                    try? h.write(contentsOf: data)
+                    try? h.close()
+                }
+            } else { try? data.write(to: url) }
+        }
+    }
+}
+
 @main
 struct AsmaulHusnaApp: App {
+    init() {
+        if CommandLine.arguments.contains("--export-test") {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                Task { await Self.exportTest() }
+            }
+        }
+    }
+
     @StateObject private var state = AppState.shared
     @ObservedObject private var settings = AppSettings.shared
 
@@ -53,4 +77,30 @@ struct AsmaulHusnaApp: App {
         .defaultPosition(.center)
         .windowResizability(.contentMinSize)
     }
+
+    /// `AsmaulHusna --export-test` renders a post, a story, a carousel and a short reel,
+    /// prints the paths and quits. Used to verify the Share pipeline without clicking.
+    @MainActor
+    static func exportTest() async {
+        let s = AppSettings.shared
+        StepLog.write("exportTest started")
+        let list = Array(Names.all.prefix(3))
+        let post = ShareExport.post(list[0], s)
+        StepLog.write("post=\(post?.path ?? "FAIL")")
+        let story = ShareExport.story(list[1], s)
+        StepLog.write("story=\(story?.path ?? "FAIL")")
+        let carousel = ShareExport.carousel(list, s)
+        StepLog.write("carousel=\(carousel.count)")
+        do {
+            let reel = try await ShareExport.reel(list, audio: nil, secondsPerCard: 1.0, s)
+            StepLog.write("reel=\(reel.path)")
+            print("EXPORT-TEST post=\(post?.path ?? "FAIL") story=\(story?.path ?? "FAIL") "
+                  + "carousel=\(carousel.count) reel=\(reel.path)")
+        } catch {
+            print("EXPORT-TEST post=\(post?.path ?? "FAIL") story=\(story?.path ?? "FAIL") "
+                  + "carousel=\(carousel.count) reel-error=\(error)")
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { NSApp.terminate(nil) }
+    }
 }
+

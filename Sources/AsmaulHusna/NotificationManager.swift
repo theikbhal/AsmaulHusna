@@ -9,7 +9,11 @@ final class NotificationManager: NSObject, ObservableObject {
     @Published var isAuthorized = false
     private enum K { static let id = "com.ikbhal.asmaulhusna.reminder" }
 
+    /// UNUserNotificationCenter throws outside a real .app bundle (e.g. `swift run`).
+    private var available: Bool { Bundle.main.bundleURL.pathExtension == "app" }
+
     func checkAuthorization() {
+        guard available else { return }
         UNUserNotificationCenter.current().getNotificationSettings { s in
             let ok = s.authorizationStatus == .authorized || s.authorizationStatus == .provisional
             Task { @MainActor in self.isAuthorized = ok }
@@ -17,6 +21,7 @@ final class NotificationManager: NSObject, ObservableObject {
     }
 
     func requestAuthorization() {
+        guard available else { return }
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
             Task { @MainActor in
                 self.isAuthorized = granted
@@ -26,6 +31,7 @@ final class NotificationManager: NSObject, ObservableObject {
     }
 
     func schedule() {
+        guard available else { return }
         cancel()
         let s = AppSettings.shared
         guard s.reminderOn, isAuthorized else { return }
@@ -45,10 +51,12 @@ final class NotificationManager: NSObject, ObservableObject {
     }
 
     func cancel() {
+        guard available else { return }
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [K.id])
     }
 
     func sendTest() {
+        guard available else { return }
         let content = UNMutableNotificationContent()
         content.title = "🕌 Test — Asmaul Husna"
         content.body = "Your daily reminder works. See you at \(String(format: "%02d:%02d", AppSettings.shared.reminderHour, AppSettings.shared.reminderMinute))."

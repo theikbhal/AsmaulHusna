@@ -37,7 +37,7 @@ Notifications only schedule reliably from a real `.app` bundle — always test f
 
 ## Where files go
 
-- PNG posts / stories / squares / carousels / reels → `~/Desktop/AsmaulHusna/`
+- PNG posts / stories / squares / carousels / reels → `~/Desktop/AsmaulHusna-Exports/`
 - Progress → UserDefaults (`ah.*` keys for progress, `asmaulhusna.settings.*` for preferences)
 
 ## Uninstall
