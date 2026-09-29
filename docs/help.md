@@ -50,6 +50,15 @@ The name moves through five Leitner boxes: **today → 1 → 3 → 7 → 21 days
 listed at the bottom of the tab (cover & recite, write it three times, pair with meaning,
 five-box rhythm, hear & repeat, link the chain).
 
+## Show me all 99 names?
+
+**Names** tab (`⌘2`) is a read-only list of every name: Arabic, transliteration, Telugu and the
+meaning, with a **green check** for names you have read, a **purple seal** for names mastered in
+the memorisation ladder, your read count, and today's name highlighted in orange.
+
+**Auto-scroll** glides down the list hands-free — pace it **Slow / Medium / Fast**. Scrolling with
+your own mouse or trackpad stops it.
+
 ## How do I share to Instagram?
 
 **Share** tab:
@@ -72,8 +81,8 @@ Everything is local — UserDefaults on this Mac. No account, no server, no anal
 
 | Action | Shortcut |
 | --- | --- |
-| Read · Memorize · Challenges · Garden | `⌘1` · `⌘2` · `⌘3` · `⌘4` |
-| Stats · Share · Settings | `⌘5` · `⌘6` · `⌘7` |
+| Read · Names · Memorize · Challenges | `⌘1` · `⌘2` · `⌘3` · `⌘4` |
+| Garden · Stats · Share · Settings | `⌘5` · `⌘6` · `⌘7` · `⌘8` |
 | Count one recitation | `Space` / `Return` |
 | Undo | `Esc` |
 | Previous / next name | `←` / `→` |

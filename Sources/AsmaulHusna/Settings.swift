@@ -39,6 +39,9 @@ final class AppSettings: ObservableObject {
         gardenOn = get("gardenOn", true)
         badgesOn = get("badgesOn", true)
         challengesOn = get("challengesOn", true)
+        namesListOn = get("namesListOn", true)
+        namesAutoScroll = get("namesAutoScroll", false)
+        namesSpeed = get("namesSpeed", "medium")
         memorizeOn = get("memorizeOn", true)
         shareOn = get("shareOn", true)
         videoOn = get("videoOn", true)
@@ -78,6 +81,9 @@ final class AppSettings: ObservableObject {
     @Published var gardenOn: Bool { didSet { set("gardenOn", gardenOn) } }
     @Published var badgesOn: Bool { didSet { set("badgesOn", badgesOn) } }
     @Published var challengesOn: Bool { didSet { set("challengesOn", challengesOn) } }
+    @Published var namesListOn: Bool { didSet { set("namesListOn", namesListOn) } }
+    @Published var namesAutoScroll: Bool { didSet { set("namesAutoScroll", namesAutoScroll) } }
+    @Published var namesSpeed: String { didSet { set("namesSpeed", namesSpeed) } }
     @Published var memorizeOn: Bool { didSet { set("memorizeOn", memorizeOn) } }
     @Published var shareOn: Bool { didSet { set("shareOn", shareOn) } }
     @Published var videoOn: Bool { didSet { set("videoOn", videoOn) } }

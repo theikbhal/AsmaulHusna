@@ -142,6 +142,7 @@ struct SettingsPane: View {
                 ("Animations", $settings.animationsOn),
                 ("Confetti celebration", $settings.confettiOn),
                 ("3D card tilt", $settings.threeDOn),
+                ("Names list tab", $settings.namesListOn),
                 ("Memorize tab", $settings.memorizeOn),
                 ("Challenges tab", $settings.challengesOn),
                 ("Garden & avatar", $settings.gardenOn),

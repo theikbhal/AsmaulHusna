@@ -43,6 +43,7 @@ struct RootView: View {
 
     private var visibleTabs: [AppState.Tab] {
         var t = AppState.Tab.allCases
+        if !settings.namesListOn { t.removeAll { $0 == .names } }
         if !settings.challengesOn { t.removeAll { $0 == .challenges } }
         if !settings.gardenOn { t.removeAll { $0 == .garden } }
         if !settings.memorizeOn { t.removeAll { $0 == .memorize } }
@@ -54,6 +55,7 @@ struct RootView: View {
     private var detail: some View {
         switch state.tab {
         case .read: ReadView()
+        case .names: NamesListView()
         case .memorize: MemorizeView()
         case .challenges: ChallengesView()
         case .garden: GardenView()

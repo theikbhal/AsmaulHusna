@@ -61,12 +61,13 @@ struct AsmaulHusnaApp: App {
         .commands {
             CommandGroup(after: .newItem) {
                 Button("Read") { state.tab = .read }.keyboardShortcut("1", modifiers: .command)
-                Button("Memorize") { state.tab = .memorize }.keyboardShortcut("2", modifiers: .command)
-                Button("Challenges") { state.tab = .challenges }.keyboardShortcut("3", modifiers: .command)
-                Button("Garden") { state.tab = .garden }.keyboardShortcut("4", modifiers: .command)
-                Button("Stats") { state.tab = .stats }.keyboardShortcut("5", modifiers: .command)
-                Button("Share") { state.tab = .share }.keyboardShortcut("6", modifiers: .command)
-                Button("Settings") { state.tab = .settings }.keyboardShortcut("7", modifiers: .command)
+                Button("Names") { state.tab = .names }.keyboardShortcut("2", modifiers: .command)
+                Button("Memorize") { state.tab = .memorize }.keyboardShortcut("3", modifiers: .command)
+                Button("Challenges") { state.tab = .challenges }.keyboardShortcut("4", modifiers: .command)
+                Button("Garden") { state.tab = .garden }.keyboardShortcut("5", modifiers: .command)
+                Button("Stats") { state.tab = .stats }.keyboardShortcut("6", modifiers: .command)
+                Button("Share") { state.tab = .share }.keyboardShortcut("7", modifiers: .command)
+                Button("Settings") { state.tab = .settings }.keyboardShortcut("8", modifiers: .command)
             }
             CommandGroup(after: .help) {
                 Button("Replay Onboarding") { state.replayOnboarding() }

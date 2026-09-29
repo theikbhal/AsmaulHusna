@@ -15,6 +15,9 @@ badges, memorisation ladder and garden** honest.
 - **Read tab** — Arabic (large, RTL) · English transliteration · Telugu transliteration ·
   meaning in English and Telugu · a short dua for that name · a hadith/ayah attached to it.
   `Space` = read once, `Esc` = undo, `←/→` switch names, drag the card to tilt it in 3D.
+- **Names tab** — a read-only list of all **99 names** (Arabic, transliteration, Telugu,
+  meaning) with a **check mark per name** (green = read, purple seal = mastered), read counts,
+  today's name highlighted and an **auto-scroll** you can pace **slow / medium / fast**.
 - **Streak & pass** — target reads per name (default 3), a **minimum pass** per day, current and
   best streak, automatic midnight rollover, 99-day name cycle.
 - **Challenges** — daily · weekly · monthly · yearly · **Sunday** · **evening** · **family**,
@@ -59,8 +62,8 @@ Requires macOS 14+ and a Swift toolchain (`xcode-select --install`).
 
 | Action | Shortcut |
 | --- | --- |
-| Read · Memorize · Challenges · Garden | `⌘1` · `⌘2` · `⌘3` · `⌘4` |
-| Stats · Share · Settings | `⌘5` · `⌘6` · `⌘7` |
+| Read · Names · Memorize · Challenges | `⌘1` · `⌘2` · `⌘3` · `⌘4` |
+| Garden · Stats · Share · Settings | `⌘5` · `⌘6` · `⌘7` · `⌘8` |
 | Count one recitation | `Space` / `Return` |
 | Undo | `Esc` |
 | Previous / next name | `←` / `→` |

@@ -5,11 +5,12 @@ final class AppState: ObservableObject {
     static let shared = AppState()
 
     enum Tab: String, CaseIterable, Identifiable {
-        case read, memorize, challenges, garden, stats, share, settings, help
+        case read, names, memorize, challenges, garden, stats, share, settings, help
         var id: String { rawValue }
         var title: String {
             switch self {
-            case .read: return "Read"; case .memorize: return "Memorize"
+            case .read: return "Read"; case .names: return "Names"
+            case .memorize: return "Memorize"
             case .challenges: return "Challenges"; case .garden: return "Garden"
             case .stats: return "Stats"; case .share: return "Share"
             case .settings: return "Settings"; case .help: return "Help"
@@ -17,7 +18,8 @@ final class AppState: ObservableObject {
         }
         var symbol: String {
             switch self {
-            case .read: return "book.closed.fill"; case .memorize: return "brain.head.profile"
+            case .read: return "book.closed.fill"; case .names: return "list.bullet.rectangle.fill"
+            case .memorize: return "brain.head.profile"
             case .challenges: return "flag.checkered"; case .garden: return "leaf.fill"
             case .stats: return "chart.bar.fill"; case .share: return "camera.on.rectangle"
             case .settings: return "gearshape.fill"; case .help: return "questionmark.circle"

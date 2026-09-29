@@ -43,18 +43,25 @@ struct HelpView: View {
                    + "/ Good / Easy. Each grade moves the name through five Leitner boxes "
                    + "(today → 1 → 3 → 7 → 21 days).")
 
+                qa("Show me all 99 names",
+                   "Names tab (⌘2): a read-only list of every name with a green check for the ones "
+                   + "you have read, a purple seal for the mastered ones, read counts and today's "
+                   + "name highlighted. Turn on Auto-scroll to glide down the list at a slow, "
+                   + "medium or fast pace — scrolling by hand stops it.")
+
                 qa("How do I share to Instagram?",
                    "Share tab: Post 4:5, Story/Reel 9:16, Square 1:1 or a multi-card carousel. "
                    + "“Export reel” renders an MP4 (optionally with an audio file you choose). "
-                   + "Everything is written to ~/Desktop/AsmaulHusna.")
+                   + "Everything is written to ~/Desktop/AsmaulHusna-Exports.")
 
                 qa("Is my data safe?",
                    "Everything is local — UserDefaults on this Mac. No account, no server, no analytics. "
                    + "Settings → Data can erase it all.")
 
                 qa("Keyboard shortcuts",
-                   "⌘1 Read · ⌘2 Memorize · ⌘3 Challenges · ⌘4 Garden · ⌘5 Stats · ⌘6 Share · "
-                   + "⌘7 Settings · Space = read · Esc = undo · ← → = switch name · ⇧⌘O = replay onboarding.")
+                   "⌘1 Read · ⌘2 Names · ⌘3 Memorize · ⌘4 Challenges · ⌘5 Garden · ⌘6 Stats · "
+                   + "⌘7 Share · ⌘8 Settings · Space = read · Esc = undo · ← → = switch name · "
+                   + "⇧⌘O = replay onboarding.")
 
                 qa("It does not remind me",
                    "Only a real .app bundle can schedule notifications reliably. Install with "

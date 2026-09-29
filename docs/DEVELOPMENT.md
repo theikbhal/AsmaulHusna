@@ -13,7 +13,7 @@ swift run                   # run from the terminal (no login item / notificatio
 
 | Path | Role |
 | --- | --- |
-| `Sources/AsmaulHusna/AsmaulHusnaApp.swift` | window, environment objects, `⌘1…⌘7` commands |
+| `Sources/AsmaulHusna/AsmaulHusnaApp.swift` | window, environment objects, `⌘1…⌘8` commands |
 | `AppState.swift` | tabs, onboarding flags, `recordRead()`, badge checks, toast |
 | `Names.swift` | the 99 entries (`ar/tr/te/en/ta`) + generated dua + hadith bank |
 | `ReadStore.swift` | per-day counts, streak, heatmap, mastery, 99-day cycle |
